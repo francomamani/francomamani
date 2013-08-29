@@ -1,0 +1,35 @@
+git --version
+git help
+git help command
+git config --global user.name "franco mamani"
+git config --global user.email "correo"
+git config --list
+
+ssh-keygen 
+Y
+password
+cat id_rsa.pub
+
+on github
+ssh keys
+	add
+		title
+		copy the key
+		passphrase
+ssh-add trouble for ubuntu
+connect to github from your host
+ssh -T git@github.com
+
+mkdir a folder
+	git init = rastreame!
+	git remote add origin git@github.com... = remote access 
+	git pull = download with the new branches 
+	git checkout master	= cambiar de repo
+	git status = changed something?
+	
+	git add name-file
+	git status
+	git commit -m envuelto para subir al repositorio" 
+	git push origin master
+	
+
