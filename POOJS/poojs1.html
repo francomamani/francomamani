@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<title>POO JS</title>
+	<meta http-equiv="content-type"content="text/html;charset=utf-8"/>
+	<script type="text/javascript" src="./js/poojs1.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/poojs1.css"/>
+	<script type="text/javascript">
+		var formulario= new LogIn();
+	</script>
+</head>
+<body >
+	<h1>EJEMPLO DE MANEJO DE COLORES</h1>
+	<h4>Front-End Web Developer: Franco Jesus Mamani Pozo</h4>
+	<h4><a href="https://twitter.com/mamani_franco" target="_blank">@mamani_franco</a></h4>
+	<section id='contenedor'>
+		<input type='color' autofocus>
+		<input type="text">
+		<button onclick="formulario.update()">actualizar</button>		
+		<p>Aqui aparecera tu texto</p>
+	</section>
+	<section id='controles'>
+		<button onclick="formulario.destroy()">Destruir</button>
+		<button onclick="formulario.restore()">Restaurar</button>
+	</section>
+</body>
+</html>

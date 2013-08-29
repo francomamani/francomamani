@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<title>DOM1</title>
+	<script type="text/javascript" src="./js/dom1.js"></script>
+	<script type="text/javascript">
+	var color= new Color();
+	</script>
+	
+	<style type="text/css">
+	h2
+	{
+		text-align: center;
+	}
+	form
+	{
+		background: black;
+		width: 25%;
+		margin: 0 auto;
+		color: white;
+		padding: 2%; 
+	}
+	div#color
+	{
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<h2>EJEMPLO RANGE y NUMBER</h2>
+	<form name='main'>
+		0<input type="range" name="rojo" value="128" min="0" max="255" step="1" oninput="color.setColorRojo()"/>255
+		0<input type="range" name="verde" value="128" min="0" max="255" step="1" oninput="color.setColorVerde()"/>255
+		0<input type="range" name="azul" value="128" min="0" max="255" step="1" oninput="color.setColorAzul()"/>255
+		<input type="number" name="intervalo" value="1" oninput="color.ajustarIntervalo()"/>
+		Result: <output name="result"> </output>
+	</form>
+</body>
+</html>
