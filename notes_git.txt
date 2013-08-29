@@ -32,4 +32,9 @@ mkdir a folder
 	git commit -m envuelto para subir al repositorio" 
 	git push origin master
 	
+	git rm name_of_file
+	git commit -m "message"
+	git push origin master
+	
+	
 
