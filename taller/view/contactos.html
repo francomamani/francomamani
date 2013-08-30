@@ -1,0 +1,100 @@
+<script type="text/javascript">
+$(document).ready(function()
+{
+  $("#form_contacto").submit(function() //evento submit del formulario
+  {
+        event.preventDefault(); //detenemos el comportatamiento por defecto
+        var url=$('#form_contacto').attr('action');//url del action del formulario 
+        var datos=$(this).serialize();//datos del formulario
+        $.ajax({
+          type:'post',
+          url:url, 
+          data:datos,
+          success:mostrarRespuesta
+        });
+  });
+}
+);
+function mostrarRespuesta (responseText) {
+  var nombre = document.getElementById("form_contacto").getElementsByTagName("input")[0];
+  var asunto = document.getElementById("form_contacto").getElementsByTagName("input")[1];
+  var email =  document.getElementById("form_contacto").getElementsByTagName("input")[2];
+  var comentario = document.getElementById("form_contacto").getElementsByTagName("textarea")[0];
+  nombre.value="";
+  asunto.value="";
+  email.value="";
+  comentario.value="";
+  alertify.alert("Comentario enviado! :D ");
+}
+</script>
+			   	   	   <div id="content">
+			   	   	   	 <div class="content">
+							   <h2>Contáctenos</h2>
+							   <div>
+								   <p>
+								   	 Esta pagina a sido disenada por Franco Mamani, Sergio Corzo, para mayor informacion puedes acudir a la informacion de abajo o enviarnos un correo a traves del formulario :)
+								   </p>
+							   </div>
+							   
+							   <ul class="connect">
+									<li>
+										<h2>Servicios para el Cliente</h2>
+										<p>
+										  <span>E-mail: <a href="#">mamanipozofrancojesus@gmail.com</a></span>
+										  <span>Llamanos o envianos un e-mail para ayudarte, en linea o fuera de linea</span>
+										</p>
+										<p>
+										  <span>Llama a: (+591) 761 33064</span>
+										</p>
+									</li>
+									<li>
+										<h2>Horarios de Atencion</h2>
+										<p>
+										  <span>Lunes a Vierns 9:00 am - 7:00 pm (GMT-4)</span>
+										  <span>Cerrado Sabados y Domingos</span>
+										</p>
+										
+									</li>
+									<li>
+										<h2>Fan Page Facebook</h2>
+										<p>
+										  <span>Veterinaria Yayita</span>
+										  <span>250 Lorem Ipsum Street</span>
+										  <span>4th Floor</span>
+										  <span>jaonfanr, Caknan 109935</span>
+										  <span>Kiangab</span>
+										</p>
+									</li>
+								</ul>
+						</div>
+						
+			   	   	   </div>
+			   	   	<form id="form_contacto" action="../action/contactos.php">
+			   	   		<fieldset>
+			   	   			<legend>Conctáctenos</legend>
+							<div class="division">
+			   	   				<label for="nombre">Nombre Completo: *</label>
+			   	   				<input required name="nombre" type="text" maxlength="500" placeholder="Nombre Completo" autofocus/>
+							</div>	
+							<div class="division">
+			   	   				<label for="asunto">Asunto: *</label>
+			   	   				<input required name="asunto" type="text" maxlength="500" placeholder="Asunto" />
+							</div>	
+							<div class="division">
+			   	   				<label for="email">Correo Electronico: *</label>
+			   	   				<input required name="email" type="email" maxlength="100" placeholder="ejemplo@ejemplo.com">
+			   	   			</div>	
+			   	   			<div class="division">
+			   	   				<label for="comentario">Comentario: </label>
+			   	   				<textarea name="comentario" id="comentario">
+			   	   				</textarea>
+			   	   			</div>	
+			   	   			<div class="division">
+			   	   				<input type="submit" value="Enviar Comentario"/>
+			   	   			</div>
+			   	   		</fieldset>
+			   	   	</form>
+			   	   </div>
+			</div>
+			
+			

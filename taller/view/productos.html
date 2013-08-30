@@ -1,0 +1,111 @@
+<div class="content"> <h3>PRODUCTOS</h3></div>
+
+<!--
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("#form_productos").submit(function() //evento submit del formulario
+	{
+		event.preventDefault(); //detenemos el comportatamiento por defecto
+		var url=$('#form_productos').attr('action');//url del action del formulario 
+		var datos=$(this).serialize();//datos del formulario
+		$.ajax({
+			type:'post',
+			url:url, 
+			data:datos,
+			success:mostrarRespuesta
+		}
+		);
+	}
+	);
+}
+);
+
+function mostrarRespuesta (responseText) {
+	var sigla=document.getElementsByTagName("input")[0];
+	var nombre_curso=document.getElementsByTagName("input")[1];
+	sigla.value='';
+	nombre_curso.value='';
+	$("#aviso").css({
+		'background':'rgb(83, 166, 0)', 
+		'color':'white', 
+		'text-align':'center', 
+		'width':'100%', 
+		'padding':'2% 0',
+		'margin-bottom':'5%'
+	});
+	$('#aviso').append(responseText+'<br>');
+}
+	
+</script>
+-->
+
+<section class="producto">
+	<section class="producto_nombre">Arena para gato</section>
+	<section class="producto_imagen1"></section>	
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Casas portable</section>
+	<section class="producto_imagen2"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Juguetes</section>
+	<section class="producto_imagen3"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Jabones</section>
+	<section class="producto_imagen4"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Shampoos</section>
+	<section class="producto_imagen5"></section>
+</section> <section class="producto">
+	<section class="producto_nombre">camas</section>
+	<section class="producto_imagen6"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Lociones</section>
+	<section class="producto_imagen7"></section>	
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Comida</section>
+	<section class="producto_imagen8"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Propac Dog</section>
+	<section class="producto_imagen9"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Repto Mini</section>
+	<section class="producto_imagen10"></section>
+</section> 
+<section class="producto">
+	<section class="producto_nombre">Collares</section>
+	<section class="producto_imagen11"></section>
+</section> <section class="producto">
+	<section class="producto_nombre">Whiskas</section>
+	<section class="producto_imagen12"></section>
+</section> 
+
+<div class="parrafo content">
+	<div>
+		<h3>Productos</h3>
+		<ul>
+			<li>Arena para gato</li>
+			<li>Bolsas para transporte</li>
+			<li>Placas de identificación</li>
+			<li>Jabones anti pulgas</li>
+			<li>Espumas limpiadoras</li>
+			<li>Camas</li>
+			<li>Shampoo</li>
+			<li>Alimento para peces y muchos mas.</li>	
+			<li>Alimento para perros</li>
+			<li>Alimento para tortuga</li>
+			<li>Correas</li>
+			<li>Alimento para gatos</li>
+			<li>Carnazas para perros</li>
+			<li>Collares</li>
+		</ul>	
+	</div>
+</div>
+	

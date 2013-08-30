@@ -1,0 +1,12 @@
+{%extends 'baseTemplate.html'%}
+{%block title%}
+Invitado - Inicio
+{%endblock%}
+
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+	alertify.alert("{{username}}");
+</script>
+{%endblock%}
+

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{%block title%}
+			ADMIN- Veterinaria Yayita
+		{%endblock%}
+	</title>
+	<meta  charset="utf-8"/>
+	{%block stylesheet%}
+		<link rel="stylesheet" type="text/css" href="../../assets/css/modal.css"/>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/style.css"/>
+		<link rel="stylesheet" href="../../vendor/jquery-ui/css/humanity/jquery-ui.css" />
+		<link rel="stylesheet" href="../../vendor/alertify/themes/alertify.core.css" />
+		<link rel="stylesheet" href="../../vendor/alertify/themes/alertify.default.css" />
+	{%endblock%}
+	{%block javascript%}
+				<script type="text/javascript" src="../../assets/js/jquery.js"></script>
+		<script type="text/javascript" src="../../assets/js/animacion.js"></script>
+		<script type="text/javascript" src="../../assets/js/ajax.js"></script>
+		
+		<script type="text/javascript" src="./gallery/js/jquery.js"></script>
+		<script type="text/javascript" src="./gallery/js/swfobject.js"></script>
+		<script type="text/javascript" src="./gallery/js/flashgallery.js"></script>
+		<script src="../../assets/js/dropzone.js"></script>
+
+		<!--ALERTIFY-->
+		<script type="text/javascript" src="../../vendor/alertify/src/alertify.js"></script>
+		<!--JQUERY UI-->
+		<script type="text/javascript" src="../../vendor/jquery-ui/js/jquery-ui.js"></script>
+	{%endblock%}		
+
+	<!--[if IE 6]>
+		<link href="css/ie6.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+        <link href="css/ie7.css" rel="stylesheet" type="text/css" />  
+	<![endif]-->
+</head>
+
+<body>
+	<div class="banner">
+	</div>
+	{%block header%}
+			<div id="header">
+					<ul class="navigation">
+						<li class="active"><a href="./principalFrontal.php" >Inicio</a></li>
+						<li><a href="#" title="Servicios Administrador" onclick="template.create('servicios_vip')">Servicios</a></li>
+						<li><a href="#" title="Productos Administrador" onclick="template.create('productos_vip')">Productos</a></li>
+						<li><a href="#" title="Ubicacion" onclick="template.create('mapas')">Ubicación</a></li>
+						<li><a href="#" title="Mi Cuenta" onclick="template.create('adminsitrador')">Mi Cuenta</a></li>
+						<li><a href="#" title="Facturacion" onclick="template.create('facturacion_productos')">Facturacion</a></li>						
+					</ul>
+					<!--
+					<div class="inicio_registro">
+						<li><a href="#">Iniciar Sesion</a></li>
+						<li><a href="#">Registrate!</a></li>
+					</div>
+					-->
+			</div>
+	{%endblock%}	
+	<div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="close" class="close">X</a> 
+      <form action="../action/iniciar_sesion.php" method="POST" class="emergente">
+      	<fieldset>
+      	      <legend>INICIAR SESION</legend>
+      	      <div class="division">
+      	        <label>Usuario: </label>
+      	        <input class="input2" type="text" name="username" maxlength="25" required autofocus/>
+      	      </div>
+      	      <div class="division">
+      	        <label>Password:</label>
+      	        <input class="input2" type="password" name="password" maxlength="25" required />
+      	      </div>
+      	      <div class="division">
+      	        <input class="input2" type="submit" value="Iniciar Sesion"/>
+      	      </div>
+      	</fieldset>
+      </form>
+  </div> 
+	</div>
+	<!--FIN INICIO SESION-->
+
+	<div id="openModalRegistro" class="modalDialog">
+  <div>
+    <a href="#close" title="close" class="close">X</a> 
+      <form action="../model/registro_usuario.php" class="emergente">
+     	 <fieldset>
+            <legend>REGISTRARSE</legend>
+            	<div class="division">
+            	<label>Nombre: </label>
+                <input class="input2" type="text" name="usuario" maxlength="25" placeholder="NOMBRES" required autofocus/>
+            	</div>
+            	<div class="division">
+            	<label>Apellido:</label>
+                <input class="input2" type="text" name="usuario" maxlength="25" placeholder="APELLIDOS" required autofocus/>
+            	</div>
+            	<div class="division">
+            	<label>Correo Electronico:</label>
+                <input class="input2" type="email" name="usuario" maxlength="25" placeholder="TU CORREO ELECTRONICO" required autofocus/>
+            	</div>
+            	<div class="division">
+            	<label>Re ingresar Correo Electronico</label>
+                <input class="input2" type="email" name="usuario" maxlength="25" placeholder="RE INGRESAR CORREO ELECTRONICO" required autofocus/>
+            	</div>
+            	<div class="division">
+            	<label>Nuevo Password</label>
+                <input class="input2" type="password" name="usuario" maxlength="25" placeholder="NUEVO PASSWORD" required autofocus/>
+            	</div>
+            	<div class="division">
+                  <label class="etiqueta">FECHA DE NACIMIENTO: </label>
+                  <select>
+                    <option>DIA</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                  <select>
+                    <option>MES</option>
+                    <option value="1">Ene</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Abr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Ago</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dic</option>
+                  </select>
+                  <select>
+                    <option>AÑO</option>
+                    <option value="1981">1981</option>
+                    <option value="1982">1982</option>
+                    <option value="1983">1983</option>
+                    <option value="1984">1984</option>
+                    <option value="1985">1985</option>
+                    <option value="1986">1986</option>
+                    <option value="1987">1987</option>
+                    <option value="1988">1988</option>
+                    <option value="1989">1989</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                  </select>
+            	</div>
+            	<div class="division">
+              <label>Elija su sexo:</label>
+              <input type="radio" value="m" name="sexo"/>
+              <span>Mujer &nbsp;&nbsp;&nbsp;</span>
+              <input type="radio" value="v" name="sexo"/>
+              <span>Varon &nbsp;&nbsp;&nbsp;</span>
+            	</div>
+            	<div class="division">
+                	<input type="submit" value="Registrarse"/>
+            	</div>
+      	</fieldset>
+      </form>
+  </div> 
+	</div>
+	<!--FIN REGISTRO-->
+
+	<div id="body">	
+					<nav class="acceso">
+	           			<ul>
+							<li><a href="../action/cerrar_sesion.php" title="Cerrar Sesion" >Cerrar Sesion</a></li>
+	           				<div class="limpiar"></div>
+	           			</ul>
+	           		</nav>
+			<div id="content">			   
+				{%block content%}	
+				        {%block galeria%}
+				        <div class="galeria">
+							<script type="text/javascript">
+								jQuery.flashgallery('./gallery/gallery.swf', './gallery/config.xml', { width: '844px', height: '320px', background: 'transparent' });
+							</script>
+						</div>
+						{%endblock%}
+						{%block contenido%}
+				        				        <div class="content">
+				        		<p class="grande">
+				        		SI TU AMAS Y GUSTAS DE CUIDAR Y DARLE TODO TU CARIÑO A UN ANIMALITO, 
+								AQUI TE AYUDAMOS, RECIBE ASESORIA DE LOS EXPERTOS
+				        		</p>
+								<hr/>
+				        		
+				        		<p class="grande">
+								Veterinaria YAYITA ofrece una excelente calidad de 
+								servicios médicos veterinarios para tu mascota.
+								Ubicados en la zona norte de la ciudad de Oruro, 
+								tenemos como objetivo dar una excelente atención 
+								y cuidado especial a las mascotas ofreciendo servicios 
+								de calidad a precios accesibles
+				        		</p>
+				        		
+								<ul>
+									<li>
+										<a href="#"><img src="../../assets/images/puppy.jpg" width="114" height="160" alt="Veterinaria Yayita" title="Veterinaria Yayita"></a>
+										<h2>Que necesita tu mascota?</h2>
+										<p>El mejor trato de mano de los expertos, en salud veterinaria</p>
+									</li>
+									<li>
+										<a href="#"><img src="../../assets/images/cat.jpg" width="114" height="160" alt="Veterinaria Yayita" title="Veterinaria Yayita"></a>
+										<h2>Algo Bueno</h2>
+										<p>Te ofrecemos una gran cantidad de productos y servicios para tu mascota</p>
+									</li>
+									<li>
+										<a href="#"><img src="../../assets/images/koi.jpg" width="114" height="160" alt="Veterinaria Yayita" title="Veterinaria Yayita"></a>
+										<h2>Tipos Comida para Gatos</h2>
+										<p>Contamos con una gran cantidad de comida para gatos</p>
+									</li>
+									<li>
+										<a href="#"><img src="../../assets/images/bird.jpg" width="114" height="160" alt="Veterinaria Yayita" title="Veterinaria Yayita"></a>
+										<h2>Canarios</h2>
+										<p>Para nuestros hermosos canarios tenemos una gran cantidad de comidas. </p>
+									</li>
+								</ul>
+						</div>
+						{%endblock%}
+				{%endblock%}
+				</div>
+			</div>
+	</div>
+
+	{%block footer%}
+				<div id="footer">
+			        			        <div class="section">
+						<ul>
+							<li>
+								<img src="../../assets/images/friendly-pets.jpg" width="240" height="186" alt="Veterinaria Yayita" title="Veterinaria Yayita">
+								<h2><a href="#">Amistad con las mascotas</a></h2>
+								<br/>
+								<p>
+								   Fortalece la amistad con tu mascota. 
+								</p>
+							</li>	
+							<li>
+								<img src="../../assets/images/pet-lover2.jpg" width="240" height="186" alt="Veterinaria Yayita" title="Veterinaria Yayita">
+								<h2><a href="#">Que tan peligrosos pueden ser</a></h2>
+								<br/>
+								<p>
+								   Informate que medidas de seguridad debemos tener.  
+								</p>
+							</li>	
+							<li>
+								<img src="../../assets/images/healthy-dog.jpg" width="240" height="186" alt="Veterinaria Yayita" title="Veterinaria Yayita">
+								<h2><a href="#">Mantenlos saludables</a></h2>
+								<br/>
+								<p>
+								   Te ayudamos a mantenerlos sanos y felices :)  
+								</p>
+							</li>	
+							<li>
+								
+								<h2><a href="#">Amor...amor...amor...a las mascotas</a></h2>
+								<br/>
+								<p>
+								     Fortalenciendo los lazos con nuestra mascota.  
+								</p>
+								<img src="../../assets/images/pet-lover.jpg" width="240" height="186" alt="Veterinaria Yayita" title="Veterinaria Yayita">
+							</li>	
+						</ul>
+					</div>
+
+					<div id="footnote">
+						<div class="section">
+						   &copy; 2013 <a href="#">Veterinaria Yayita</a>. Todos Los Derechos Reservados.
+						</div>
+					</div>
+				</div>../
+	{%endblock%}
+	<!--FIN FOOTER-->	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<script type="text/javascript">
+			$(document).ready(function(){
+  				$("#form_registro").submit(function() //evento submit del formulario
+  				{
+  				      event.preventDefault(); //detenemos el comportatamiento por defecto
+  				      var url=$('#form_registro').attr('action');//url del action del formulario 
+  				      var datos=$(this).serialize();//datos del formulario
+  				      $.ajax({
+  				        type:'post',
+  				        url:url, 
+  				        data:datos,
+  				        success:mostrarRespuesta
+  				      });
+  				});
+			});
+</script>
+
+<aside class="panel_izq">
+	<nav>
+		<ul class="nav_panel">
+			<li><a href="#" title="Mis Datos" onclick="template.mis_datos()">Mis Datos</a></li>
+		</ul>
+	</nav>
+</aside>
+<div class="panel_der" id="panel">
+	<div class="content">
+		<h3>Bienvenido a la seccion de administracion de su cuenta</h3>
+	</div>
+
+</div>

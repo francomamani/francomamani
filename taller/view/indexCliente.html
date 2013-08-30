@@ -1,0 +1,12 @@
+{%extends 'baseClienteTemplate.html'%}
+{%block title%}
+Cliente - Inicio
+{%endblock%}
+
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+	alert("{{aviso}}");
+</script>
+{%endblock%}
+
