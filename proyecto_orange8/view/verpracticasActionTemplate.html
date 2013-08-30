@@ -1,0 +1,28 @@
+{% extends 'Estudiante.html'%}
+{% block stylesheet%}
+{{parent()}}
+<style type="text/css">
+#navegacion a
+{
+	font-weight: bold;
+}
+#navegacion a img
+{
+	vertical-align: text-bottom;
+}
+
+</style>
+{% endblock %}
+{%block contenido%}
+ <h2>PRACTICAS</h2>
+ <hr/>
+	<nav id="navegacion">
+		<ul>
+				{%for url in urls %}
+				<li>
+					<a href={{url}} target='_blank'> <img src="../../static/images/download.jpg"></a>
+				</li>
+				{%endfor%}
+		</ul>
+	</nav>
+{%endblock%}

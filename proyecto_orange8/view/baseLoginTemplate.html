@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang='es'>
+<head>
+	<title>
+		{%block title%}
+			Inicio
+		{%endblock%}
+	</title>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	{%block stylesheet%}
+		<link rel="stylesheet" type="text/css" href="../../static/css/baseLogin.css"/>
+	{%endblock%}
+	{%block javascript%}
+		<script type="text/javascript" src='../../static/js/jquery.js'></script>
+		<script type="text/javascript" src='../../static/js/animacion.js'></script>
+	{%endblock%}
+</head>
+<body>
+	<section id='contenedor'>
+		<header>
+			<div id='logo'><img src="../../static/images/logomenu.png"/></div>
+			<div id='menu'>
+				<ul class='menu_desplegable'>
+					<li><a href="#">{%block usuario%}usuario{%endblock%}</a></li>
+					<li><a href="#"><img src="../../static/images/despliegue_menu.png"></a>
+						<ul>
+							{%block options%}
+							<li><a href="#">Perfil<img src="../../static/images/despliegue_menu.png"></a>
+								<ul>
+									{%block perfil%}
+									<li><a href="#">Editar</a></li>
+									{%endblock%}
+								</ul>
+							</li>
+							<li><a href="#">Sistema<img src="../../static/images/despliegue_menu.png"></a>
+								<ul>
+									{%block sistema%}
+									{%endblock%}
+									<li><a href="../CerrarSesionController.php">Cerrar Sesion</a></li>
+								</ul>
+							</li>
+							{%endblock%}
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<nav id='navegacion'>
+			<ul>
+			{%block nav%}
+				<li class='nav_main_li'><a href="InicioFrontal.php">Inicio</a></li>
+				<li class='nav_main_li'><a href="AcercadeFrontal.php">Acerca de</a></li>
+				<li class='nav_main_li'><a href="AyudaFrontal.php">Ayuda</a></li>
+				<li class='nav_main_li'><a href="DocumentacionFrontal.php">Documentación</a></li>
+			{%endblock%}
+			</ul>
+		</nav>
+		<section id='contenido'>
+			{%block contenido%}
+			{%endblock%}
+		</section>
+		<footer>
+			{%block footer%}
+			<nav id='navegacion_footer'>
+				<ul>
+					<li id='enlace_uno'><a href="#">Proyecto Orange</a></li>
+					<li id='enlace_dos'><a href="#">Contacto</a></li>
+				</ul>	
+			</nav>
+			{%endblock%}
+		</footer>
+	</section>
+</body>
+</html>

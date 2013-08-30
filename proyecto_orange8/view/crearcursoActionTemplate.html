@@ -1,0 +1,86 @@
+{%extends 'Administrador.html'%}
+
+{%block stylesheet%}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="../../static/css/formularios.css"/>
+{%endblock%}
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("#crearCursoForm").submit(function() //evento submit del formulario
+	{
+		event.preventDefault(); //detenemos el comportatamiento por defecto
+		var url=$('#crearCursoForm').attr('action');//url del action del formulario 
+		var datos=$(this).serialize();//datos del formulario
+		$.ajax({
+			type:'post',
+			url:url, 
+			data:datos,
+			success:mostrarRespuesta
+		}
+		);
+	}
+	);
+}
+);
+
+function mostrarRespuesta (responseText) {
+	var sigla=document.getElementsByTagName("input")[0];
+	var nombre_curso=document.getElementsByTagName("input")[1];
+	sigla.value='';
+	nombre_curso.value='';
+	$("#aviso").css({
+		'background':'rgb(83, 166, 0)', 
+		'color':'white', 
+		'text-align':'center', 
+		'width':'100%', 
+		'padding':'2% 0',
+		'margin-bottom':'5%'
+	});
+	$('#aviso').append(responseText+'<br>');
+}
+	
+function validacionSigla () {
+	var sigla=document.forms.crearCursoForm.elements.sigla;
+	var validacionSigla=document.forms.crearCursoForm.elements.sigla.checkValidity();
+	if (validacionSigla) 
+		sigla.style.color="green";
+	else
+		sigla.style.color="red";
+}
+function validarNombreCurso()
+{
+	var nombre=document.forms.crearCursoForm.elements.nombre;
+	var validacionNombre=document.forms.crearCursoForm.elements.nombre.checkValidity();
+	if(validacionNombre)
+		nombre.style.color="green";
+	else
+		nombre.style.color="red";
+}
+</script>
+{%endblock%}
+{%block contenido%}
+<form id='crearCursoForm' method='post' action='../action/CrearCursoAction.php' name="crearCursoForm">
+	<fieldset>
+		<legend>Crear Curso</legend>
+		<ul>
+			<li>
+				<label>Sigla</label>
+				<input type='text' name='sigla' maxlength='7' required pattern="([A-Z]{3}\d{4})" oninput="validacionSigla()"  placeholder="SIS1110" autofocus/>
+			</li>
+			<li>
+				<label>Nombre del Curso</label>
+				<input type='text' name='nombre' maxlength='50' pattern="([A-Z ]{5,})" oninput="validarNombreCurso()" placeholder="METODOLOGIA DE PROGRAMACION I" required  />
+			</li>
+			<li>
+				<input type='submit' value='Crear Curso'/>
+			</li>
+			<li>
+				<div id='aviso'></div>
+			</li>
+		</ul>
+	</fieldset>
+</form>
+{%endblock%}

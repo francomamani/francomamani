@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang='es'>
+<head>
+	<title>
+		{%block title%}
+			Inicio
+		{%endblock%}
+	</title>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	{%block stylesheet%}
+		<link rel="stylesheet" type="text/css" href="../../static/css/base.css"/>
+	{%endblock%}
+	{%block javascript%}
+		<script type="text/javascript" src='../../static/js/jquery.js'></script>
+		<script type="text/javascript" src='../../static/js/animacion.js'></script>
+
+	{%endblock%}
+</head>
+<body>
+	<section id='contenedor'>
+		<header>
+			{%block options%}
+			<form id="login" name="login" method='post' action='../action/LoginUsuarioAction.php'>
+				<input type='text' name='cuenta' maxlength='25' autofocus required placeholder='Nick' />
+				<input type='password' name='password' maxlength='25' required placeholder='Contraseña'/>
+				<input type='submit' value='Iniciar Sesión'/>
+			</form>
+			{%endblock%}
+		</header>
+		<nav id='navegacion'>
+			<ul>
+			{%block nav%}
+				<li class='nav_main_li'><a href="InicioFrontal.php">Inicio</a></li>
+				<li class='nav_main_li'><a href="AcercadeFrontal.php">Acerca de</a></li>
+				<li class='nav_main_li'><a href="AyudaFrontal.php">Ayuda</a></li>
+				<li class='nav_main_li'><a href="DocumentacionFrontal.php">Documentación</a></li>
+			{%endblock%}
+			</ul>
+		</nav>
+		<section id='contenido'>
+			{%block contenido%}
+			{%endblock%}
+		</section>
+		<footer>
+			{%block footer%}
+			<nav id='navegacion_footer'>
+				<ul>
+					<li id='enlace_uno'><a href="#">Proyecto Orange</a></li>
+					<li id='enlace_dos'><a href="#">Contacto</a></li>
+				</ul>	
+			</nav>
+			{%endblock%}
+		</footer>
+	</section>
+</body>
+</html>

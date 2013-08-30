@@ -1,0 +1,112 @@
+{% extends "baseLoginTemplate.html"%}
+{%block title%}
+Administrador
+{%endblock%}
+{%block usuario%}
+{{administrador}}
+{%endblock%}
+{%block stylesheet%}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="../../static/css/formularios.css"/>
+{%endblock%}
+
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("#crearParaleloForm").submit(function() //evento submit del formulario
+	{
+		event.preventDefault(); //detenemos el comportatamiento por defecto
+		var url=$('#crearParaleloForm').attr('action');//url del action del formulario 
+		var datos=$(this).serialize();//datos del formulario
+		$.ajax({
+			type:'post',
+			url:url, 
+			data:datos,
+			success:mostrarRespuesta
+		}
+		);
+	}
+	);
+}
+);
+
+function mostrarRespuesta (responseText) {
+	$("#aviso").css({
+		'background':'rgb(83, 166, 0)', 
+		'color':'white', 
+		'text-align':'center', 
+		'width':'100%', 
+		'padding':'2% 0',
+		'margin-bottom':'5%'
+	});
+	$('#aviso').append(responseText+'<br>');
+}
+</script>
+
+{%endblock%}
+{%block sistema%}
+	<li><a href="#">Registrar Usuario</a></li>
+	<li><a href="CrearCursoFrontalAction.php">Crear Curso</a></li>
+	<li><a href="CrearGestionFrontalAction.php">Crear Gestion</a></li>
+	<li><a href="CrearParaleloFrontalAction.php">Crear Paralelo</a></li>
+	<li><a href="#">Listar Cursos</a></li>
+	<li><a href="#">Asignar Docente</a></li>
+	<li><a href="#">Ayuda de administración</a></li>
+{%endblock%}
+{%block contenido%}
+<form id="crearParaleloForm" action="../action/CrearParaleloAction.php" method="post">
+	<fieldset>
+		<legend>Crear Paralelo</legend>
+		<ul>
+			<li>
+				<label>Gestion</label>
+				<select name="gestion">
+					{%for gestion in gestiones%}
+					<option value="{{gestion}}">{{gestion}}</option>
+					{%endfor%}
+				</select>
+			</li>
+			<li>
+				<label>Sigla del Curso</label>
+				<select name="sigla">
+					{%for sigla in siglas%}
+						<option value="{{sigla}}">{{sigla}}</option>
+					{%endfor%}
+				</select>
+			</li>
+			<li>
+				<label>Paralelo</label>
+				<select name="paralelo">
+					{%for paralelo in paralelos%}
+						<option value="{{paralelo}}">{{paralelo}}</option>
+					{%endfor%}
+				</select>
+			</li>
+			<li>
+				<label>Docente</label>
+				<select name="docente">
+					{%for docente in docentes%}
+						<option value="{{docente}}">{{docente}}</option>
+					{%endfor%}
+				</select>
+			</li>
+			<li>
+				<label>Auxiliar</label>
+				<select name="auxiliar">
+					{%for auxiliar in auxiliares%}
+						<option value="{{auxiliar}}">{{auxiliar}}</option>
+					{%endfor%}
+				</select>
+			</li>
+			<li>
+				<input type="submit" value="Crear Paralelo"/>
+			</li>
+			<li>
+				<div id="aviso"></div>
+			</li>
+		</ul>
+	</fieldset>
+</form>
+{%endblock%}

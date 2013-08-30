@@ -1,0 +1,81 @@
+{%extends 'Administrador.html'%}
+
+{%block stylesheet%}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="../../static/css/formularios.css"/>
+<style type="text/css">
+label
+{
+	clear: right;
+}
+</style>
+{%endblock%}
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("#crearGestionForm").submit(function() //evento submit del formulario
+	{
+		event.preventDefault(); //detenemos el comportatamiento por defecto
+		var url=$('#crearGestionForm').attr('action');//url del action del formulario 
+		var datos=$(this).serialize();//datos del formulario
+		$.ajax({
+			type:'post',
+			url:url, 
+			data:datos,
+			success:mostrarRespuesta
+		}
+		);
+	}
+	);
+}
+);
+
+function mostrarRespuesta (responseText) {
+	var semestre=document.getElementsByTagName("select")[0];
+	var anio=document.getElementsByTagName("select")[1];
+	$("#aviso").css({
+		'background':'rgb(83, 166, 0)', 
+		'color':'white', 
+		'text-align':'center', 
+		'width':'100%', 
+		'padding':'2% 0',
+		'margin-bottom':'5%'
+	});
+	$('#aviso').append(responseText+'<br>');
+}
+
+</script>
+{%endblock%}
+{%block contenido%}
+<form id='crearGestionForm' method='post'action='../action/CrearGestionAction.php'>
+	<fieldset>
+		<legend>Crear Gestion</legend>
+		<ul>
+			<li>
+				<label>Semestre</label>
+				<select name='semestre'>
+						<option value=1>1</option>
+						<option value=2>2</option>
+						<option value=3>verano</option>
+				</select>
+			</li>
+			<li>
+				<label>Año</label>
+				<select name='anio'>
+					{%for anio in anios%}
+						<option value={{anio}}>{{anio}}</option>
+					{%endfor%}
+				</select>
+			</li>
+			<li>
+				<input type='submit' value='Crear Gestion'/>
+			</li>
+			<li>
+				<div id='aviso'></div>
+			</li>
+		</ul>
+	</fieldset>
+</form>
+{%endblock%}

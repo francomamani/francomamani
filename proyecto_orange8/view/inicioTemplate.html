@@ -1,0 +1,19 @@
+{%extends 'baseTemplate.html'%}
+{%block title%}
+Inicio
+{%endblock%}
+{%block stylesheet%}
+{{parent()}}
+	<link rel="stylesheet" type="text/css" href="../../static/css/inicio.css"/>
+{%endblock%}
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+	alert("{{aviso}}");
+</script>
+{%endblock%}
+
+{%block contenido%}
+
+<img src="../../static/images/orange.png"/>
+{%endblock%}

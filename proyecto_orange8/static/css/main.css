@@ -1,0 +1,51 @@
+*
+{
+	margin: 0;
+	font-size: 20px;
+}
+#contenedor
+{
+	width: 85%;
+	height: 970px;
+	margin: 0 auto;
+
+	background: linear-gradient(270deg, orange, yellow);
+	background: -webkit-linear-gradient(270deg, orange, yellow);
+	background: -moz-linear-gradient(270deg, orange, yellow);
+	background: -o-linear-gradient(270deg, orange, yellow);
+	background: -ms-linear-gradient(270deg, orange, yellow);
+}
+header
+{
+	height: 4%;
+}
+header p
+{
+	padding: 2%;
+}
+#navegacion
+{
+	height: 4%;
+}
+#navegacion .nav_main_li
+{
+	display: inline-block;
+	float: right;
+	margin: 0 5%; 
+}
+#navegacion .nav_main_li a
+{
+	color: rgb(220, 220, 220);
+	text-decoration: none;
+}
+#navegacion .nav_main_li a:hover
+{
+	color: white;
+}
+#contenido
+{
+	width: 90%;
+	height: 88%;
+	background-color:rgba(240, 240, 240, .4);
+	margin: 0 auto;
+}

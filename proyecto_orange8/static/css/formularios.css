@@ -1,0 +1,40 @@
+form
+{
+	width: 40%;
+	margin: 0 auto;
+}
+form legend
+{
+	text-align: center;
+}
+form fieldset > ul li
+{
+	padding: 5% 1%;
+	list-style: none;
+}
+form fieldset > ul li label
+{
+	text-align: right;
+	margin-right: 5%;
+	float: left;
+	width: 30%;
+}
+form fieldset > ul li input , form fieldset > ul li select
+{
+	width: 50%;
+}
+form fieldset > ul li input
+{
+	font-weight: bold;
+}
+form fieldset >ul li input[type='submit']
+{
+	display: block;
+	width: 40%;
+	height: 2em;
+	margin: 0 auto;
+}
+ul li input:focus
+{
+	border: 2px solid green; 
+}

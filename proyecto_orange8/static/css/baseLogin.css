@@ -1,0 +1,185 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+body
+{
+	background-color: rgb(255, 255, 255);
+}
+#contenedor
+{
+	background-color: rgb(250, 250, 250);
+	width: 90%;
+	height: 1000px;
+	margin: 0 auto;
+}
+header
+{
+	height: 6%;
+	width: 100%;
+}
+div
+{
+	float: left;
+	height: 100%;
+	margin: 0;
+	padding-top: 1%;
+}
+#logo
+{
+	text-align: center;
+	width: 20%; 
+}
+#menu
+{
+	float: right;
+	position: relative;
+	background:url(../images/menu.png) no-repeat; 
+	background-size: 100% 100%;
+	width: 80%;
+	text-align: right; 
+}
+.menu_desplegable
+{
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+.menu_desplegable li ul li a, .menu_desplegable li ul li ul li 
+{
+	text-align: left;
+	min-width: 120px;	
+}
+.menu_desplegable li
+{
+	list-style: none;
+}
+.menu_desplegable > li 
+{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.menu_desplegable li a
+{
+	display: block;
+	padding: 5px 12px;
+	color: white;
+	text-decoration: none;
+}
+	.menu_desplegable li > ul
+	{
+		display: none;
+		position: absolute;
+		min-width: 230px;
+		right: 0%;
+	} 
+	.menu_desplegable li:hover > ul
+	{
+		display: block;
+	}
+.menu_desplegable li ul > li
+{
+	background: url(../images/menudesplegable.png);
+}
+.menu_desplegable li ul li a img
+{
+	float: right;
+}
+.menu_desplegable li ul li > ul 
+{
+	position: relative;
+	right: 0%;
+}
+
+.menu_desplegable li ul li ul  li > a 
+{
+	color: black;
+	background-color: rgb(230, 230, 230);
+}
+.menu_desplegable li ul li ul  li > a:hover
+{
+	color: black;
+	background-color: rgb(210, 210, 210);
+}
+
+#navegacion
+{
+	width: 80%;
+	height: 3%;
+	margin: 0 auto;
+	text-align: right;
+	padding-top: 2%;
+}
+#navegacion li
+{
+	display: inline;
+}
+#navegacion a
+{
+	padding: 1% 3%;
+	color: rgb(40, 40, 40);
+	text-decoration: none;
+	font-weight: 500;
+	transition:all .3s ease-in .1s;
+	-webkit-transition:all .3s ease-in .1s;
+	-moz-transition:all .3s ease-in .1s;
+	-o-transition:all .3s ease-in .1s;
+	-ms-transition:all .3s ease-in .1s;
+
+}
+#navegacion a:hover
+{
+	background-color: rgb(220, 220, 220);
+}
+
+#contenido
+{
+	background: url(../images/contenido.png) no-repeat;
+	background-size: 100% 100%;
+	width: 80%;
+	height: 75%;
+	margin: 0 auto;
+	padding: 5%;
+}
+footer
+{
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height:4%;
+	margin:0 auto;
+	background: url(../images/footer.png) no-repeat;
+	background-size: 100% 100%;
+}
+#navegacion_footer
+{
+	width: 90%;
+	margin: 0 auto;
+	padding-top:1%; 
+}
+#navegacion_footer span
+{
+	width: 20%;
+}
+
+#enlace_uno 
+{
+	display: inline;
+	float: left;
+	margin-left: -2%;
+}
+#enlace_dos
+{
+	display: inline;
+	float: right;
+	margin-right: 2%;
+}
+#navegacion_footer a
+{
+	text-decoration: none;
+	color: white;
+	font-weight: 500;
+}

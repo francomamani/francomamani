@@ -1,0 +1,232 @@
+{%extends 'baseTemplate.html'%}
+{%block stylesheet%}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="../../static/css/documentacion.css"/>
+{%endblock%}
+{%block javascript%}
+{{parent()}}
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').hide();
+		$('#navegacion_latetal').find('.nav_lat_li').hover(function()
+			{
+					$(this).find('.sub').slideDown('slow');
+			}, function()
+			{
+					$(this).find('.sub').slideUp('slow');	
+			}
+		);
+		$('#contenido_documentacion').find('.articulo').hide();
+		
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').find('#url_glosario').click(function()
+		{
+			$('#contenido_documentacion').find('.articulo').hide();
+			$('#glosario').fadeIn('slow');
+		}
+		);
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').find('#url_dcun').click(function()
+		{
+			$('#contenido_documentacion').find('.articulo').hide();
+			$('#diagrama_cu_negocio').fadeIn('slow');
+		}
+		);
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').find('#url_mdd').click(function()
+		{
+			$('#contenido_documentacion').find('.articulo').hide();
+			$('#modelo_do').fadeIn('slow');
+		}
+		);
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').find('#url_dcus').click(function()
+		{
+			$('#contenido_documentacion').find('.articulo').hide();
+			$('#diagrama_cu_sistema').fadeIn('slow');
+		}
+		);
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').find('#url_ecu').click(function()
+		{
+			$('#contenido_documentacion').find('.articulo').hide();
+			$('#especificacion_cu').fadeIn('slow');
+		}
+		);
+		$('#navegacion_latetal').find('.nav_lat_li').find('.sub').find('#url_eas').click(function()
+		{
+			$('#contenido_documentacion').find('.articulo').hide();
+			$('#especificacion_actores').fadeIn('slow');
+		}
+		);
+	}
+	);
+	</script>
+{%endblock%}
+{%block contenido%}
+<section id='contenedor_documentacion'>
+	<aside id='barra_lateral'> 
+		<nav id='navegacion_latetal'>
+			<ol>
+				<li class='nav_lat_li'><a href="#">Determinación de requerimientos</a>
+					<ul class='sub'>
+						<li id='url_glosario'><a href="#">Glosario</a></li>
+						<li id='url_dcun'><a href="#">Diagrama de casos de uso del negocio</a></li>
+						<li id='url_mdd'><a href="#">Modelo del dominio</a></li>
+						<li id='url_dcus'><a href="#">Diagrama de casos de uso del sistema</a></li>
+						<li id='url_ecu'><a href="#">Especificación de casos de uso del sistema</a></li>
+						<li id='url_eas'><a href="#">Especificación de actores del sistema</a></li>
+					</ul>
+				</li>	
+				<li class='nav_lat_li'><a href="#">Análisis</a>
+					<ul class='sub'>
+						<li><a href="#">Diagrama de análisis</a></li>
+					</ul>
+				</li>
+				<li class='nav_lat_li'><a href="#">Diseño</a>
+					<ul class='sub'>
+						<li><a href="#">Diagrama de clases</a></li>
+						<li><a href="#">Modelo Entidad-Relación</a></li>
+						<li><a href="#">Modelo Relacional</a></li>
+						<li><a href="#">Diagrama de secuencias</a></li>
+					</ul>
+				</li>
+				<li class='nav_lat_li'><a href="#">Implementación</a>
+					<ul class='sub'>
+						<li><a href="#">Diseño de interfaces</a></li>
+						<li><a href="#">Diagrama de componentes</a></li>
+					</ul>
+				</li>
+				<li class='nav_lat_li'><a href="#">Pruebas</a>
+					<ul class='sub'>
+						<li><a href="#">Casos de prueba</a></li>
+						<li><a href="#">Pruebas de caja blanca</a></li>
+						<li><a href="#">Pruebas de caja negra</a></li>
+					</ul>
+				</li>
+			</ol>	
+		</nav>
+	</aside>
+
+		<section id='contenido_documentacion'>
+		<!--aqui estan todos las especificaciones de casos de uso del sistema-->
+			<article class='articulo' id='glosario'>
+				<header class='titulo_articulo'>
+					Glosario de Terminos
+				</header>
+				<section class='contenido_articulo'>
+					<ol>
+						<li>Gestión
+							<p>Tiempo comprendido por un semestre durante el tiempo por el cual se realizan actividades académicas</p>
+						</li>
+						<li>Curso
+							<p>
+								Es el conjunto compuesto por la gestión, la materia y el paralelo.
+							</p>
+						</li>
+						<li>Planificación
+							<p>Proceso dentro del sistema donde se definen los objetivos, temas, y bibliografia que ser abordara durante toda la gestion.</p>
+						</li>					
+						<li>Sistema
+							<p>Es la aplicación creada con todos sus componentes físicos y lógicos(Sistema Informático).</p>
+						</li>
+						<li>Ofertar Curso
+							<p>Posibilidad que da el sistema SISIN a que un estudiante pueda llevar una daterminada materia en un gestion.</p>
+						</li>
+					</ol>
+				</section>
+			</article>
+			<!--FIN ESPECIFICACION CASO DE USO-->
+
+			<article class='articulo' id='diagrama_cu_negocio'>
+				<header class='titulo_articulo'>Diagrama de Casos de Uso del Negocio</header>
+
+					<section><img src="../../static/images/DiagramaCUNegocio.png"/></section>
+			</article>
+
+
+			<article class='articulo' id='modelo_do'>
+				<header class='titulo_articulo'>Modelo del Dominio</header>
+					
+					<section><img src="../../static/images/ModeloDelDominio.png"/></section>
+			</article>
+
+			<article class='articulo' id='diagrama_cu_sistema'>
+				<header class='titulo_articulo'>Diagrama de Casos de Uso del Sistema</header>
+					
+					<section><img src="../../static/images/DiagramaCUSistema.png"/></section>
+			</article>
+
+			
+			<!--aqui estan todos las especificaciones de casos de uso del sistema-->
+			<article class='articulo' id='especificacion_cu'>
+				<header class='titulo_articulo'>
+					Especificación de casos de uso del sistema
+				</header>
+				<section class='contenido_articulo'>
+					
+
+
+					<article>
+						<header class='nombre'>Iniciar Sesion</header>
+						<ul>
+							<li class='subtitulo'>Descripcion
+								<p>Esta es la descripción</p>
+							</li>
+							<li class='subtitulo'>Flujo básico
+								<ol>
+									<li><p>Primer paso</p></li>
+									<li><p>Segundo paso</p></li>
+								</ol>
+							</li>
+							<li class='subtitulo'>Flujo alterno
+								<ol>
+									<li><p>Primer caso</p></li>
+									<li><p>Segudo caso</p></li>
+								</ol>
+							</li>
+								
+							<li class='subtitulo'>Precondiciones
+								<ul>
+									<li><p>Primera precondición</p></li>
+									<li><p>Segunda precondición</p></li>
+								</ul>
+							</li>
+								
+							<li class='subtitulo'>Postcondiciones
+								<ul>
+									<li><p>Primera postcondición</p></li>
+									<li><p>Segunda postcondición</p></li>
+								</ul>
+							</li>
+								
+						</ul>
+					</article>
+
+				</section>
+			</article>
+			<!--FIN ESPECIFICACION CASO DE USO-->
+
+			<!--aqui estan todos las especificaciones de actore del sistema-->
+			
+			<article class='articulo' id='especificacion_actores'>
+				<header class='titulo_articulo'>
+					Especificación de Actores del Sistema 
+				</header>
+				<section class='contenido_articulo'>
+			
+					<article>
+						<header class='nombre'>Usuario</header>
+						<section class='descripcion'>
+							<header>Descripcion</header>
+							<p></p>
+						</section>
+						<section class='cu_int_actor'>
+							<header>Casos de uso en los que interviene el actor</header>
+							<p></p>
+						</section>
+					</article>
+			
+				</section>
+			</article>
+			<!--FIN ESPECIFICACION CASO DE USO-->
+		</section>
+	</section>
+
+{%endblock%}
