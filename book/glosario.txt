@@ -1,0 +1,3 @@
+GLOSARIO DE TERMINOS
+mixin: Clase que contiene una combinación de métodos de otras clases
+
