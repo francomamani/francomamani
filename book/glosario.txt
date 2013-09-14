@@ -1,3 +1,6 @@
 GLOSARIO DE TERMINOS
 mixin: Clase que contiene una combinación de métodos de otras clases
 
+atributo: representacion directa de un modelo de datos al cual se puede acceder desde cualquier clase
+
+propiedad: elemento de la clase que siempre usa setters y getters

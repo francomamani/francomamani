@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<title>menus responsivos</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript">	
+	$(document).ready(function () {
+		var mostrar= false;//true= mostrar, false = no mostrars
+			$("#desplegar_menu").click(function() {
+				if (mostrar==true) 
+				{
+					$("#items").removeClass("hide");
+					$("#items").addClass("show");
+					mostrar=false;
+				}			
+				else
+				{
+					$("#items").removeClass("show");
+					$("#items").addClass("hide");
+					mostrar=true;
+				}
+			});
+			
+			$(window).resize(function() {
+				var ancho = $(window).width();
+					if (ancho >420)
+					{
+						$("#items").removeClass("hide");
+						$("#items").addClass("show");
+					}
+			});
+
+			$("#items li a").click(function () {
+				$("#items li a").removeClass("resaltado");
+				$(this).addClass("resaltado");
+			});
+	});
+	</script>
+</head>
+<body>
+	<h1>Menus Responsivos</h1>
+	<nav>
+		<ul id="menu">
+			<div id="desplegar_menu"><li><a href="#">MENU</a></li></div>
+			<div id="items">
+				<li class="item"><a href="#">item</a></li>
+				<li class="item"><a href="#">item</a></li>
+				<li class="item"><a href="#">item</a></li>
+				<li class="item"><a href="#">item</a></li>
+				<li class="item"><a href="#">item</a></li>
+				<li class="item"><a href="#">item</a></li>
+				<div class="clear"></div>
+			</div>
+		</ul>
+	</nav>
+
+</body>
+</html>

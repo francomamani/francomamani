@@ -1,0 +1,32 @@
+nav
+{
+	background-color: black;
+}
+nav ul
+{
+	background-color: blue;
+}
+nav ul li
+{
+	padding: .5em;
+	margin-right:.5em; 
+	background-color: yellow;
+	float: left;
+	list-style-type: none;
+}
+nav ul li a
+{
+	background-color: red;
+}
+.clear
+{
+	clear: both;
+}
+
+@media screen and (max-width: 420px){
+	nav ul li a
+	{
+		display: block;
+		width: 100%;
+	}
+}
